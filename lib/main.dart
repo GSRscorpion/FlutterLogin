@@ -1,81 +1,67 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(AppQI());
+void main ()
+{
+  runApp(MeuApp());
 }
 
-class AppQI extends StatelessWidget {
-  const AppQI({super.key});
+
+class MeuApp extends StatelessWidget {
+  const MeuApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(248, 255, 187, 0),
-        appBar: AppBar(
-          title: Text("Aplicativo"),
-          centerTitle: true,
-        ),
-        drawer: Drawer(
-          child: ListView(
-            children: const [
-              DrawerHeader(child: Text("Menu")),
-              ListTile(title: Text("Opção1"),)
-            ],
-          ),
-        ),
         body: Padding(
-          padding: const EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(//clicar na lampada no colunm pra automaticamente alinhar com padding
             vertical: 60,
             horizontal: 90,
           ),
           child: Column(
             spacing: 30,
             children: [
-              
-              Image.asset(
-                "asset/images/iconeAzul.webp", 
-                width: 50,
-              ),
 
+              Image.asset(// criar folder asser/images pra usar imagens
+                "asset/images/iconeAzul.webp",
+                width: 160,
+              ),
+          
               Text(
-                "Cadastro",
+                "Login",
                 
                 style: TextStyle(
+                  color: const Color.fromARGB(255, 6, 176, 206),
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                ),
+                  backgroundColor:  const Color.fromARGB(255, 36, 46, 48),
+                  ),
               ),
-
+          
               TextField(
                 decoration: InputDecoration(
-                  labelText: "Nome:",
+                  labelText: "Usuário:",
                   border: OutlineInputBorder(),
                 ),
               ),
-
+          
               TextField(
                 decoration: InputDecoration(
-                  labelText: "CPF:",
-                  border: OutlineInputBorder(),
+                labelText: "Senha:",
+                border: OutlineInputBorder(),
                 ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: "Endereço:",
-                  border: OutlineInputBorder(),
                 ),
-              ),
+          
               TextButton(
-                onPressed: () {},
+                onPressed: (){}, 
                 child: Text("Cadastre-se"),
               ),
-
-              TextButton(
-                onPressed: () {},
-                child: Text("Limpar"),
-              ),
-
+              
+              ElevatedButton(
+                onPressed: (){}, 
+                child: Text("Entrar"),
+                ),
+                
             ],
           ),
         ),
